@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="3.1.0" client="site" method="upgrade">
+    <name>OVO Clients</name>
+    <author>Vladimir Alexeev</author>
+    <version>1.0.0</version>
+    <description></description>
+    <files>
+        <filename>mod_ovoclients.xml</filename>
+        <filename module="mod_ovoclients">mod_ovoclients.php</filename>
+        <filename>index.html</filename>
+        <filename>helper.php</filename>
+        <filename>tmpl/default.php</filename>
+        <filename>tmpl/index.html</filename>
+    </files>
+    <config>
+    <fields name="params">
+        <fieldset name="basic">
+            <field
+                name="pagelistagreements"
+                type="textarea"
+                rows="3"
+                default=""
+                label="Страница со списком договоров"
+                description=""
+            />
+            <field
+                name="showuserinfo"
+                type="radio"
+                default="0"
+                label="Показывать информацию о пользователе"
+                description=""
+                class="btn-group btn-group-yesno"
+                >
+                <option value="1">JYES</option>
+                <option value="0">JNO</option>
+            </field>            
+            <field
+                name="url1clinkagreement"
+                type="textarea"
+                label="IP адрес сервиса 1c для привязки договора."
+                description=""
+                rows="3"
+            />
+			<field
+				name="SecurityWord"
+				type="text"
+				label="Защитное слово для обращения к 1c серверу"
+				default=""
+			/>
+            <field
+                name="IsLog"
+                type="radio"
+                default="0"
+                label="Включить логи"
+                description="Будут записываться логи в файл tmp/log/ajax-ovoclients.log. "
+                class="btn-group btn-group-yesno"
+                >
+                <option value="1">JYES</option>
+                <option value="0">JNO</option>
+            </field>            
+        </fieldset>
+        <fieldset name="advanced">
+            <field
+                name="moduleclass_sfx"
+                type="textarea"
+                label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL"
+                description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC"
+                rows="3"
+            />
+			<field
+				name="textreturnLink"
+				type="hidden"
+				default=""
+			/>
+        </fieldset>
+    </fields>
+    </config>
+</extension>
