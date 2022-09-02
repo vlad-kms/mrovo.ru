@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="3.1.0" client="site" method="upgrade">
+    <name>OVO Balance</name>
+    <author>Vladimir Alexeev</author>
+    <version>1.0.0</version>
+    <description></description>
+    <files>
+        <filename>mod_ovobalance.xml</filename>
+        <filename module="mod_ovobalance">mod_ovobalance.php</filename>
+        <filename>index.html</filename>
+        <filename>helper.php</filename>
+		<folder>tmpl/</folder>
+    </files>
+    <config>
+    <fields name="params">
+        <fieldset name="basic">
+            <field
+                name="id_copy"
+                type="number"
+                label="ID дубль"
+                description="Продублируйте здесь ID модуля"
+            />
+			<field
+				name="SecurityWord"
+				type="text"
+				label="Защитное слово для обращения к 1c серверу"
+				default=""
+			/>
+            <field
+                name="url1cgetbalance"
+                type="textarea"
+                label="IP адрес сервиса 1c для получения оборотов"
+                description="Адрес для обращения к 1с за таблицей оборотов"
+                rows="3"
+            />
+            <field
+                name="IsLog"
+                type="radio"
+                default="0"
+                label="Включить логи"
+                description="Будут записываться логи в файл tmp/log/ajax-ovoagreements.log. "
+                class="btn-group btn-group-yesno"
+                >
+                <option value="1">JYES</option>
+                <option value="0">JNO</option>
+            </field>
+        </fieldset>
+        <fieldset name="advanced">
+            <field
+                name="moduleclass_sfx"
+                type="textarea"
+                label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL"
+                description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC"
+                rows="3"
+            />
+        </fieldset>
+    </fields>
+    </config>
+</extension>
